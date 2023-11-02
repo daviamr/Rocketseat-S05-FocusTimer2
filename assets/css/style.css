@@ -42,6 +42,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 6.4rem;
+    transition: .3s;
 }
 
 /*left-side*/
