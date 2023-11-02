@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Stage 05 | Desafio final</title>
+    <script src="./assets/src/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <button class="reset-button" id="toggle-mode">
+            <span class="sr-only" id="sr-mode">Ativar light mode</span>
+            <img src="./assets/img/icon/sun.svg" alt="Ícone light mode" class="sun-icon">
+            <img src="./assets/img/icon/moon.svg" alt="Ícone dark mode" class="moon-icon">
+        </button>
+    </header>
+
+    <main class="limiter">
+        <div class="main-box">
+            <div class="left-side">
+                <div>
+                    <span id="minutes">25</span>
+                    <span class="twopoints">:</span>
+                    <span id="seconds">00</span>
+                </div>
+                <div class="buttons-wrapper">
+                    <button class="reset-button play" id="controls">
+                        <img src="./assets/img/icon/play.svg" alt="Ícone play">
+                        <span class="sr-only">Botão play</span>
+                    </button>
+                    <button class="reset-button pause" id="controls">
+                        <img src="./assets/img/icon/pause.svg" alt="Ícone pause">
+                        <span class="sr-only">Botão pause</span>
+                    </button>
+                    <button class="reset-button" id="controls">
+                        <img src="./assets/img/icon/stop.svg" alt="Ícone stop">
+                        <span class="sr-only">Botão parar</span>
+                    </button>
+                    <button class="reset-button" id="controls">
+                        <img src="./assets/img/icon/more.svg" alt="Ícone adicionar tempo">
+                        <span class="sr-only">Botão adicionar tempo</span>
+                    </button>
+                    <button class="reset-button" id="controls">
+                        <img src="./assets/img/icon/less.svg" alt="Ícone diminuir tempo">
+                        <span class="sr-only">Botão diminuir tempo</span>
+                    </button>
+                </div>
+
+            </div>
+            <div class="right-side">
+                <div class="grid-box">
+                    <button class="reset-button" id="card">
+                        <i class="ph ph-tree"></i>
+                        <span class="sr-only"></span>
+                    </button>
+                    <button class="reset-button" id="card">
+                        <i class="ph ph-cloud-rain" id="card"></i>
+                        <span class="sr-only"></span>
+                    </button>
+                    <button class="reset-button" id="card">
+                        <i class="ph ph-storefront"></i>
+                        <span class="sr-only"></span>
+                    </button>
+                    <button class="reset-button" id="card">
+                        <i class="ph ph-campfire"></i>
+                        <span class="sr-only"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</body>
+
+</html>

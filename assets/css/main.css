@@ -1,0 +1,45 @@
+@import './reset.css';
+@import './style.css';
+@import './responsivity.css';
+@import './scrollbar.css';
+
+/* default styles */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --roboto: 'Roboto', sans-serif;
+    --white: #FFFFFF;
+    --black: #000000;
+    --bg-color: #000000;
+    --bg-card: #E1E1E6;
+    --bg-focused-card: #02799D;
+    --text-color: #FFFFFF;
+}
+
+body {
+    position: relative;
+    font-size: 1.6rem;
+    font-family: var(--roboto);
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* controls */
+html.light-mode {
+    --bg-color: var(--white);
+    --text-color: #323238;
+}
+
+html.light-mode .sun-icon,
+html:not(.light-mode) .moon-icon,
+html.running .play,
+html:not(.running) .pause {
+    display: none;
+}
+
+.ph {
+    font-size: 5.2rem;
+}
