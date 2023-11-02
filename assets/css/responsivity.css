@@ -1,4 +1,10 @@
 @media (min-width: 880px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .main-box {
         gap: 19rem;
         flex-direction: row;
