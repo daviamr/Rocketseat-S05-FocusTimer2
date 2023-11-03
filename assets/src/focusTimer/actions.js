@@ -5,43 +5,51 @@ import { state } from './state.js';
 const minutes = state.minutes;
 const seconds = state.seconds;
 
-//
-export function timeDisplay(minutes, seconds) {
-    el.minutes.innerText = minutes.toString().padStart(2, '0');
-    el.seconds.innerText = seconds.toString().padStart(2, '0');
-}
 
 export function start() {
     state.isRunning = !state.isRunning;
     if (!state.isRunning) return;
+    toggleRunning();
 
-    document.documentElement.classList.toggle('running');
-
-    el.seconds.innerText = `59`;
     state.countdownId = setInterval(timer.countdown, 1000);
 }
 
-function reset() {
+export function pause() {
+    if (!state.isRunning) return;
+    state.isRunning = !state.isRunning;
+    toggleRunning();
+
+    clearInterval(state.countdownId);
+}
+
+export function reset() {
+    state.isRunning = false;
+    if (document.documentElement.classList.toggle('running')) toggleRunning();
+
     clearInterval(state.countdownId);
     timeDisplay(minutes, seconds);
 }
 
-//controls event
-el.controls.forEach((el) => {
-    el.addEventListener('click', () => {
+export function set() {
+    if (state.minutes >= 60) return;
 
-        el.classList[1] === 'play' ? start() : null;
-        if (el.classList[1] === 'more') {
-            state.minutes += 5;
-            timeDisplay(state.minutes, state.seconds);
-        }
+    state.minutes += 5;
+    timeDisplay(state.minutes, el.seconds.textContent);
+}
 
-        if (el.classList[1] === 'stop') reset();
+export function unset() {
+    if (state.minutes <= 0) return;
 
-        if (el.classList[1] === 'less') {
-            state.minutes = state.minutes - 5;
-            timeDisplay(state.minutes, state.seconds);
-        }
+    state.minutes = state.minutes - 5;
+    timeDisplay(state.minutes, el.seconds.textContent);
+}
 
-    })
-})
+//utils
+function toggleRunning() {
+    return document.documentElement.classList.toggle('running');
+}
+
+export function timeDisplay(minutes, seconds) {
+    el.minutes.innerText = minutes.toString().padStart(2, '0');
+    el.seconds.innerText = seconds.toString().padStart(2, '0');
+}

@@ -8,8 +8,9 @@ export function countdown() {
     if (seconds === 0) {
         minutes--
         seconds = 59;
+    } else {
+        seconds--
     }
-    seconds--
 
     if (minutes < 0) return;
 
