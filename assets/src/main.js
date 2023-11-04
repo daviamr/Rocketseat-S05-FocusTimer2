@@ -1,5 +1,5 @@
 import * as focusTimer from './focusTimer/index.js';
-import * as card from './focusTimer/cards/actions.js';
+import * as cards from './focusTimer/cards/index.js';
 import { toggleMode, handlerMode } from "./lightmode.js";
 
 //light-mode

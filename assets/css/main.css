@@ -30,6 +30,10 @@ body {
     overflow: hidden;
 }
 
+.hide {
+    display: none;
+}
+
 /* controls */
 html.light-mode {
     --bg-color: var(--white);
