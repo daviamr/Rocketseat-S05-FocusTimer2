@@ -26,6 +26,8 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     transition: .3s;
+
+    overflow: hidden;
 }
 
 /* controls */
@@ -41,6 +43,10 @@ html:not(.running) .pause {
     display: none;
 }
 
-.ph {
-    font-size: 5.2rem;
+html.videoOn #video {
+    display: block;
+}
+
+html:not(.videoOn) #video {
+    display: none
 }

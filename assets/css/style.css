@@ -32,7 +32,6 @@
 .reset-button {
     background: none;
     border: none;
-    outline: none;
     padding: 0;
     cursor: pointer;
 }
@@ -77,15 +76,72 @@
     gap: 3.2rem;
 }
 
-#card {
-    background: var(--bg-card);
-    border-radius: 2.4rem;
-    width: 13.8rem;
+.radio-box {
     height: 15.2rem;
+    width: 13.8rem;
+    cursor: pointer;
 }
 
-#card i {
+.radio-box input {
+    display: none;
+}
+
+.radio-box i {
+    font-size: 5.2rem;
     color: var(--black);
 }
 
-/* footer */
+.radio-box i::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 13.8rem;
+    height: 15.2rem;
+    border-radius: 2.4rem;
+    background: var(--bg-card);
+}
+
+.radio-box input:checked+i::before {
+    background: var(--bg-focused-card);
+}
+
+.radio-box input:checked+i {
+    color: var(--white);
+}
+
+/* video and animation */
+#video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    height: 100vh;
+    filter: grayscale(50%);
+    animation: opacity .6s;
+}
+
+@-webkit-keyframes opacity {
+    0% {
+        -webkit-opacity: 0;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-opacity: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    0% {
+        -webkit-opacity: 0;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-opacity: 1;
+        opacity: 1;
+    }
+}

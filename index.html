@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <video autoplay muted loop src="./assets/video/florest.mp4" id="video"></video>
     <header>
         <button class="reset-button" id="toggle-mode">
             <span class="sr-only" id="sr-mode">Ativar light mode</span>
@@ -25,9 +26,9 @@
         <div class="main-box">
             <div class="left-side">
                 <div>
-                    <span id="minutes">25</span>
+                    <span id="minutes"></span>
                     <span class="twopoints">:</span>
-                    <span id="seconds">00</span>
+                    <span id="seconds"></span>
                 </div>
                 <div class="buttons-wrapper">
                     <button title="Botão play" class="reset-button play" id="controls">
@@ -55,22 +56,29 @@
             </div>
             <div class="right-side">
                 <div class="grid-box">
-                    <button class="reset-button" id="card">
+                    <label class="radio-box">
+                        <input type="radio" name="videobtn" class="reset-button florest" id="card">
                         <i class="ph ph-tree"></i>
-                        <span class="sr-only"></span>
-                    </button>
-                    <button class="reset-button" id="card">
-                        <i class="ph ph-cloud-rain" id="card"></i>
-                        <span class="sr-only"></span>
-                    </button>
-                    <button class="reset-button" id="card">
+                        <span class="sr-only">Ativar som de floresta</span>
+                    </label>
+
+                    <label class="radio-box">
+                        <input type="radio" name="videobtn" class="reset-button rain" id="card">
+                        <i class="ph ph-cloud-rain"></i>
+                        <span class="sr-only">Ativar som de chuva</span>
+                    </label>
+
+                    <label class="radio-box">
+                        <input type="radio" name="videobtn" class="reset-button coffeeshop" id="card">
                         <i class="ph ph-storefront"></i>
-                        <span class="sr-only"></span>
-                    </button>
-                    <button class="reset-button" id="card">
+                        <span class="sr-only">Ativar som de cafeteria</span>
+                    </label>
+
+                    <label class="radio-box">
+                        <input type="radio" name="videobtn" class="reset-button campfire" id="card">
                         <i class="ph ph-campfire"></i>
-                        <span class="sr-only"></span>
-                    </button>
+                        <span class="sr-only">Ativar som de lareira</span>
+                    </label>
                 </div>
             </div>
         </div>
