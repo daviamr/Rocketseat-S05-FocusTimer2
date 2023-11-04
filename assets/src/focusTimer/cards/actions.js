@@ -11,28 +11,20 @@ export const audio = {
 const html = document.documentElement;
 
 export function handlerVideo(e, context, aud) {
-
-    switch (context) {
-        case `${context}`:
-            if (audio.audioAtual != null) {
-                audio.audioAtual.pause();
-                audio.audioAtual.currentTime = 0;
-            }
-            document.documentElement.classList.toggle('videoOn');
-
-            for (let i = 0; i < html.classList.length; i++) {
-                if (html.classList[i] === 'videoOn') {
-                    video.setAttribute('src', `./assets/video/${context}.mp4`)
-                    e.checked = true;
-                    aud.play();
-                    audio.audioAtual = aud;
-                    return
-                }
-            }
-            e.checked = false;
-            break;
-
-        default:
-            break;
+    if (audio.audioAtual != null) {
+        audio.audioAtual.pause();
+        audio.audioAtual.currentTime = 0;
     }
+    document.documentElement.classList.toggle('videoOn');
+
+    for (let i = 0; i < html.classList.length; i++) {
+        if (html.classList[i] === 'videoOn') {
+            video.setAttribute('src', `./assets/video/${context}.mp4`)
+            e.checked = true;
+            aud.play();
+            audio.audioAtual = aud;
+            return
+        }
+    }
+    e.checked = false;
 }
